@@ -50,7 +50,6 @@ final class DDSButton: UIButton {
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
-@available(iOS 13.0, *)
 struct UIViewPreview<View: UIView>: UIViewRepresentable {
     let view: View
 
@@ -70,14 +69,13 @@ struct UIViewPreview<View: UIView>: UIViewRepresentable {
     }
 }
 
-@available(iOS 13.0, *)
 struct DDSButton_Preview: PreviewProvider {
     static var previews: some View {
 
         ForEach(ContentSizeCategory.allCases, id: \.self) { sizeCategory in
             UIViewPreview {
                 let button = DDSButton(type: .system)
-                button.setTitle("Follow", for: .normal)
+                button.setTitle("Swift Package", for: .normal)
                 button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
                 button.setColor(.systemOrange)
                 return button
@@ -89,7 +87,7 @@ struct DDSButton_Preview: PreviewProvider {
 
         UIViewPreview {
             let button = DDSButton(type: .system)
-            button.setTitle("Follow", for: .normal)
+            button.setTitle("Swift Package", for: .normal)
             button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
             button.setColor(.systemOrange)
             return button
